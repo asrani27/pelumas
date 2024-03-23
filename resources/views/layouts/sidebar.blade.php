@@ -15,7 +15,7 @@
     <li class="{{ (request()->is('superadmin/merkoli*')) ? 'active' : '' }}"><a href="/superadmin/merkoli"><i class="fa fa-arrow-right"></i> <span><i>Merk Oli</i></span></a></li>
     <li class="{{ (request()->is('superadmin/sparepart*')) ? 'active' : '' }}"><a href="/superadmin/sparepart"><i class="fa fa-arrow-right"></i> <span><i>Sparepart</i></span></a></li>
     <li class="{{ (request()->is('superadmin/jenislayanan*')) ? 'active' : '' }}"><a href="/superadmin/jenislayanan"><i class="fa fa-arrow-right"></i> <span><i>Jenis Layanan</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/pembelian*')) ? 'active' : '' }}"><a href="/superadmin/pembelian"><i class="fa fa-arrow-right"></i> <span><i>Transaksi Pembelian</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/penjualan*')) ? 'active' : '' }}"><a href="/superadmin/penjualan"><i class="fa fa-arrow-right"></i> <span><i>Transaksi Penjualan</i></span></a></li>
     <li class="{{ (request()->is('superadmin/perhitungan*')) ? 'active' : '' }}"><a href="/superadmin/perhitungan"><i class="fa fa-arrow-right"></i> <span><i>Perhitungan</i></span></a></li>
     <li class="{{ (request()->is('superadmin/laporan*')) ? 'active' : '' }}"><a href="/superadmin/laporan"><i class="fa fa-arrow-right"></i> <span><i>Laporan</i></span></a></li>
     <li class="{{ (request()->is('superadmin/kwitansi*')) ? 'active' : '' }}"><a href="/superadmin/kwitansi"><i class="fa fa-arrow-right"></i> <span><i>Kwitansi</i></span></a></li>
