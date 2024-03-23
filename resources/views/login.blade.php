@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BPR</title>
+  <title>BENGKEL FAUZAN MOTOR</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -33,14 +33,14 @@
   <script src="/notif/dist/js/iziToast.min.js" type="text/javascript"></script>
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-purple layout-top-nav">
+<body class="hold-transition skin-purple layout-top-nav" style="background-image: url('/bg.png')">
 <div class="wrapper">
 
   <header class="main-header">
     
   </header>
   <!-- Full Width Column -->
-  <div class="content-wrapper"  style="background: rgb(60,141,188); background: linear-gradient(48deg, rgba(60,141,188,1) 0%, rgba(187,226,249,1) 100%);">
+  <div class="content-wrapper"  style="background-image: url('/bg.png'); background-size:cover">
     <div class="container">
       <!-- Content Header (Page header) -->
       <section class="content-header">
@@ -58,18 +58,19 @@
       <!-- Main content -->
       <section class="content">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-3">
           </div>
           <div class="col-md-4">
             <div class="text-center">
             </div>
             
           <br/><br/>
-            <div class="box" style="box-shadow: 0 8px 8px 0 rgba(0,0,0,.2);border-radius:10px">
+          <br/><br/>
+          <br/><br/>
+          <br/><br/>
+            <div class="box" style="box-shadow: 0 8px 8px 0 rgba(0,0,0,.2);border-radius:30px">
               <div class="box-header text-center">
-                <br/>
-                <img src="bpr.png" width="100px" ><br/>
-                <h3><strong>BPR Multidhana Bersama</strong></h3>
+                <h3><strong>BENGKEL FAUZAN MOTOR</strong></h3>
               </div>
               <form role="form" method="post" action="/login" autocomplete="off">
                 @csrf
@@ -85,19 +86,18 @@
                   <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                  <button type="submit" class="btn btn-primary btn-flat btn-block pull-right"><i class="fa fa-send"></i> MASUK</button>
+                  <button type="submit" class="btn btn-warning btn-flat btn-block pull-right"><i class="fa fa-sign-in"></i> LOGIN</button>
                 </div>
                 <br/>
                 <br/>
                 <br/>
                 <div>
-                  Lupa kata sandi? Reset kata sandi<br/>
                 </div>
               </div>
               </form>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-5">
           </div>
         </div>
         

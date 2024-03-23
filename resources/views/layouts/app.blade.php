@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BPR</title>
+  <title>BENGKEL FAUZAN MOTOR</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 @stack('css')
 </head>
 
-<body class="hold-transition skin-blue-light sidebar-mini">
+<body class="hold-transition skin-yellow sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -35,9 +35,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">BPR</span>
+      <span class="logo-mini">BFM</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>BPR</b></span>
+      <span class="logo-lg"><b>BFM</b></span>
     </a>
 
     <!-- Header Navbar -->
@@ -75,7 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2023 <a href="#">BPR Multidhana Bersama</a>.</strong>
+    <strong>Copyright &copy; 2024 <a href="#">BFM Bengkel Fauzan Motor</a>.</strong>
   </footer>
 
   <!-- Control Sidebar -->

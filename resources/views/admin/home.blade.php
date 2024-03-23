@@ -4,8 +4,8 @@
 @endpush
 @section('content')
 <div class="row text-center">
-    <img src="/bpr.png" width="7%">
-    <h3><I>Sistem Deposito Bank Perkreditan Rakyat (BPR) Multidhana Bersama</h3>
+    <img src="/logo.jpg" width="12%">
+    <h1><I>Bengkel Fauzan Motor</h1>
 
 </div>
 
