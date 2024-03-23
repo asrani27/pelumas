@@ -13,7 +13,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             
-            <form class="form-horizontal" action="/superadmin/perhitungan/datalatih/edit/{{$data->id}}" method="post">
+            <form class="form-horizontal" action="/superadmin/perhitungan/datauji/edit/{{$data->id}}" method="post">
                 @csrf
                 <div class="box-body">
                   <div class="form-group">
@@ -38,16 +38,6 @@
                     <label for="inputEmail3" class="col-sm-2 control-label">Maret</label>
                     <div class="col-sm-10">
                       <input type="text" name="maret" class="form-control" value="{{$data->maret}}" required onkeypress="return hanyaAngka(event)"/>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Class</label>
-                    <div class="col-sm-10">
-                      <select name="class" class="form-control" required>
-                        <option value="">-pilih-</option>
-                        <option value="terlaris" {{$data->class == 'terlaris' ? 'selected':''}}>Terlaris</option>
-                        <option value="tidak terlaris" {{$data->class == 'tidak terlaris' ? 'selected':''}}>Tidak Terlaris</option>
-                      </select>
                     </div>
                   </div>
                   <div class="form-group">

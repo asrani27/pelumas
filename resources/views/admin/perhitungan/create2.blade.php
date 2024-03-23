@@ -24,19 +24,19 @@
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Januari</label>
                   <div class="col-sm-10">
-                    <input type="text" name="januari" class="form-control" required>
+                    <input type="text" name="januari" class="form-control" required onkeypress="return hanyaAngka(event)"/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Februari</label>
                   <div class="col-sm-10">
-                    <input type="text" name="februari" class="form-control" required>
+                    <input type="text" name="februari" class="form-control" required onkeypress="return hanyaAngka(event)"/>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Maret</label>
                   <div class="col-sm-10">
-                    <input type="text" name="maret" class="form-control" required>
+                    <input type="text" name="maret" class="form-control" required onkeypress="return hanyaAngka(event)"/>
                   </div>
                 </div>
                 
@@ -59,5 +59,14 @@
 @endsection
 @push('js')
 
+<script>
+  function hanyaAngka(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+     if (charCode > 31 && (charCode < 48 || charCode > 57))
+  
+      return false;
+    return true;
+  }
+  </script>
 @endpush
 
