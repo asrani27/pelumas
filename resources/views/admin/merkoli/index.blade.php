@@ -22,6 +22,7 @@
                   <th class="text-center">No</th>
                   <th>Merk Oli</th>
                   <th>Jenis Oli</th>
+                  <th>Harga</th>
                   <th>Aksi</th>
                 </tr>
                 @foreach ($data as $key => $item)
@@ -29,6 +30,7 @@
                     <td class="text-center">{{$data->firstItem() + $key}}</td>
                     <td>{{$item->nama}}</td>
                     <td>{{$item->jenisoli == null ? '': $item->jenisoli->nama}}</td>
+                    <td>{{number_format($item->harga)}}</td>
                     <td>
                         <a href="/superadmin/merkoli/edit/{{$item->id}}" class="btn btn-xs  btn-success"><i class="fa fa-edit"></i> Edit</a>
                         <a href="/superadmin/merkoli/delete/{{$item->id}}"

@@ -21,12 +21,14 @@
                 <tr>
                   <th class="text-center">No</th>
                   <th>Nama sparepart</th>
+                  <th>Harga</th>
                   <th>Aksi</th>
                 </tr>
                 @foreach ($data as $key => $item)
                 <tr>
                     <td class="text-center">{{$data->firstItem() + $key}}</td>
                     <td>{{$item->nama}}</td>
+                    <td>{{number_format($item->harga)}}</td>
                     <td>
                         <a href="/superadmin/sparepart/edit/{{$item->id}}" class="btn btn-xs  btn-success"><i class="fa fa-edit"></i> Edit</a>
                         <a href="/superadmin/sparepart/delete/{{$item->id}}"
