@@ -18,7 +18,6 @@
     <li class="{{ (request()->is('superadmin/penjualan*')) ? 'active' : '' }}"><a href="/superadmin/penjualan"><i class="fa fa-arrow-right"></i> <span><i>Transaksi Penjualan</i></span></a></li>
     <li class="{{ (request()->is('superadmin/perhitungan*')) ? 'active' : '' }}"><a href="/superadmin/perhitungan"><i class="fa fa-arrow-right"></i> <span><i>Perhitungan</i></span></a></li>
     <li class="{{ (request()->is('superadmin/laporan*')) ? 'active' : '' }}"><a href="/superadmin/laporan"><i class="fa fa-arrow-right"></i> <span><i>Laporan</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/kwitansi*')) ? 'active' : '' }}"><a href="/superadmin/kwitansi"><i class="fa fa-arrow-right"></i> <span><i>Kwitansi</i></span></a></li>
     <li class="header">SETTING</li>
     <li class="{{ (request()->is('superadmin/gp*')) ? 'active' : '' }}"><a href="/superadmin/gp"><i class="fa fa-key"></i> <span><i>Ganti Pass</i></span></a></li>
     <li><a href="/logout"><i class="fa fa-sign-out"></i> <span><i>Logout</i></span></a></li>

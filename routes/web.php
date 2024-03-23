@@ -101,6 +101,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::post('superadmin/penjualan/create', [PenjualanController::class, 'store']);
     Route::get('superadmin/penjualan/edit/{id}', [PenjualanController::class, 'edit']);
     Route::get('superadmin/penjualan/transaksi/{id}', [PenjualanController::class, 'transaksi']);
+    Route::get('superadmin/penjualan/kwitansi/{id}', [LaporanController::class, 'kuitansi']);
     Route::post('superadmin/penjualan/transaksi/{id}', [PenjualanController::class, 'transaksiStore']);
     Route::post('superadmin/penjualan/edit/{id}', [PenjualanController::class, 'update']);
     Route::get('superadmin/penjualan/delete/{id}', [PenjualanController::class, 'delete']);
@@ -109,23 +110,22 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('superadmin/perhitungan', [PerhitunganController::class, 'index']);
     Route::get('superadmin/perhitungan/datalatih/create', [PerhitunganController::class, 'createDataLatih']);
     Route::get('superadmin/perhitungan/datauji/create', [PerhitunganController::class, 'createDataUji']);
-
     Route::get('superadmin/perhitungan/datalatih/edit/{id}', [PerhitunganController::class, 'editDataLatih']);
     Route::post('superadmin/perhitungan/datalatih/edit/{id}', [PerhitunganController::class, 'updateDataLatih']);
     Route::get('superadmin/perhitungan/datauji/edit/{id}', [PerhitunganController::class, 'editDataUji']);
     Route::post('superadmin/perhitungan/datauji/edit/{id}', [PerhitunganController::class, 'updateDataUji']);
-
+    Route::get('superadmin/perhitungan/datauji/delete/{id}', [PerhitunganController::class, 'deleteDataUji']);
+    Route::get('superadmin/perhitungan/datalatih/delete/{id}', [PerhitunganController::class, 'deleteDataLatih']);
     Route::post('superadmin/perhitungan/datalatih/create', [PerhitunganController::class, 'storeDataLatih']);
     Route::post('superadmin/perhitungan/datauji/create', [PerhitunganController::class, 'storeDataUji']);
 
     Route::get('superadmin/laporan', [LaporanController::class, 'index']);
+    Route::get('superadmin/laporan/karyawan', [LaporanController::class, 'karyawan']);
+    Route::get('superadmin/laporan/jenisoli', [LaporanController::class, 'jenisoli']);
+    Route::get('superadmin/laporan/merkoli', [LaporanController::class, 'merkoli']);
+    Route::get('superadmin/laporan/jenislayanan', [LaporanController::class, 'jenislayanan']);
+    Route::get('superadmin/laporan/jabatan', [LaporanController::class, 'jabatan']);
     Route::post('superadmin/laporan/periode', [LaporanController::class, 'periode']);
-    Route::get('superadmin/laporan/pegawai', [LaporanController::class, 'pegawai']);
-    Route::get('superadmin/laporan/nasabah', [LaporanController::class, 'nasabah']);
-    Route::get('superadmin/laporan/stok', [LaporanController::class, 'stok']);
-    Route::get('superadmin/laporan/pengajuan', [LaporanController::class, 'pengajuan']);
-    Route::get('superadmin/laporan/validasi', [LaporanController::class, 'validasi']);
-    Route::get('superadmin/laporan/serahterima', [LaporanController::class, 'serahterima']);
 });
 
 Route::group(['middleware' => ['auth', 'role:pemohon']], function () {

@@ -10,11 +10,11 @@
     <table border=0 width="100%">
         <tr>
             <td width="15%" style="text-align: right">
-                <img src="/bpr.png" width="50%">
+                <img src="/logo.jpg" width="50%">
             </td>
             <td style="text-align: center">
-                <b>BPR Multidhana Bersama<br/></b>
-                Alamat: Jl. A Yani Km 9A Kelurahan Mandarsari, Kecamatan Kertak Hanyar, Banjarmasin.
+                <b>BENGKEL FAUZAN MOTOR<br/></b>
+                Alamat: Jl. Ir. P.H.M. Noor, Mabuun RT 07 Rw 03, Kec. Murung Pudak, Kab. Tabalong, Kalimantan Selatan.
                 
 
             </td>
@@ -23,19 +23,14 @@
             </td>
         </tr>
         <tr>
-            <td colspan=3 style="text-align:center"><br/><strong><u>LAPORAN PEGAWAI</u></strong></td>
+            <td colspan=3 style="text-align:center"><br/><strong><u>LAPORAN JENIS OLI</u></strong></td>
         </tr>
     </table>
     <br/>
     <table border=1 cellspacing="0" cellpadding="3" width="100%">
         <tr>
             <th>No</th>
-            <th>Nama</th>
-            <th>Jenis Kelamin</th>
-            <th>Alamat</th>
-            <th>Tgl Lahir</th>
-            <th>Telp</th>
-            <th>Jabatan</th>
+            <th>Jenis Oli</th>
         </tr>
         @php
             $no =1;
@@ -44,11 +39,6 @@
             <tr>
                 <td style="text-align: center">{{$no++}}</td>
                 <td style="text-align: center">{{$item->nama}}</td>
-                <td style="text-align: center">{{$item->jkel}}</td>
-                <td style="text-align: center">{{$item->alamat}}</td>
-                <td style="text-align: center">{{\Carbon\Carbon::parse($item->tgl_lahir)->format('d-m-Y')}}</td>
-                <td style="text-align: center">{{$item->telp}}</td>
-                <td style="text-align: center">{{$item->jabatan}}</td>
                 
             </tr>
         @endforeach
@@ -58,14 +48,14 @@
         <tr>
             <td width="60%"></td>
             <td>
-                Banjarmasin, {{\Carbon\Carbon::today()->translatedFormat('d F Y')}}, <br/>
+                Tabalong, {{\Carbon\Carbon::today()->translatedFormat('d F Y')}}, <br/>
                 
-                Kepala Bank,
+                Pimpinan,
                 <br/><br/><br/><br/><br/>
 
 
-                <b><u>Syamsudin</u></b><br/>
-                NIP. 19278979274981273
+                <b><u>Fauzan</u></b><br/>
+                
 
             </td>
         </tr>

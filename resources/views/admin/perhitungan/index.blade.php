@@ -123,18 +123,18 @@
                 <th> Euclidean Distance</th>
                 <th> Ranking</th>
               </tr>
-              {{-- @foreach ($datauji as $key => $item)
+              @foreach ($data as $key => $item)
               <tr>
-                  <td class="text-center">{{$datauji->firstItem() + $key}}</td>
+                  <td class="text-center">{{1 + $key}}</td>
                   <td>{{$item->nama}}</td>
                   <td>{{$item->januari}}</td>
-                  <td>{{$item->februai}}</td>
+                  <td>{{$item->februari}}</td>
                   <td>{{$item->maret}}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{$item->class}}</td>
+                  <td>{{$item->ed}}</td>
+                  <td>{{$item->rank}}</td>
               </tr>
-              @endforeach --}}
+              @endforeach
               
             </tbody></table>
           </div>

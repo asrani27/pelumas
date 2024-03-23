@@ -40,6 +40,7 @@
                     <td>{{$item->nopol}}</td>
                     <td>{{$item->karyawan == null ? '': $item->karyawan->nama}}</td>
                     <td>
+                      <a href="/superadmin/penjualan/kwitansi/{{$item->id}}" class="btn btn-xs  btn-danger"><i class="fa fa-print"></i> Cetak Kwitansi</a>
                         <a href="/superadmin/penjualan/transaksi/{{$item->id}}" class="btn btn-xs  btn-success"><i class="fa fa-gear"></i> Transaksi</a>
                         <a href="/superadmin/penjualan/edit/{{$item->id}}" class="btn btn-xs  btn-success"><i class="fa fa-edit"></i> Edit</a>
                         <a href="/superadmin/penjualan/delete/{{$item->id}}"
