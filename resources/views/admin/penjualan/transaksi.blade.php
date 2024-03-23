@@ -70,7 +70,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Layanan</label>
                             <div class="col-sm-7">
-                                <select name="nama" class="form-control" required>
+                                <select name="jenis_layanan_id" class="form-control" required>
                                     <option value="">-pilih-</option>
                                     @foreach ($layanan as $item)
                                         <option value="{{$item->id}}">{{$item->nama}} - Rp. {{number_format($item->harga)}}</option>
@@ -92,7 +92,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Oli</label>
                             <div class="col-sm-7">
-                                <select name="nama" class="form-control" required>
+                                <select name="merk_oli_id" class="form-control" required>
                                     <option value="">-pilih-</option>
                                     @foreach ($oli as $item)
                                         <option value="{{$item->id}}">{{$item->nama}} - Rp. {{number_format($item->harga)}}</option>
@@ -114,7 +114,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Sparepart</label>
                             <div class="col-sm-7">
-                                <select name="nama" class="form-control" required>
+                                <select name="sparepart_id" class="form-control" required>
                                     <option value="">-pilih-</option>
                                     @foreach ($sparepart as $item)
                                         <option value="{{$item->id}}">{{$item->nama}} - Rp. {{number_format($item->harga)}}</option>
@@ -155,6 +155,29 @@
                             <th>Harga</th>
                             <th>Jumlah</th>
                             <th>Total</th>
+                            <th></th>
+                        </tr>
+
+                        @foreach ($data->detail as $key=> $item)
+                            <tr>
+                                <td>{{$key + 1}}</td>
+                                <td>{{$item->nama}}</td>
+                                <td>{{number_format($item->harga)}}</td>
+                                <td>{{$item->jumlah}}</td>
+                                <td>{{number_format($item->total)}}</td>
+                                <td>
+                                    <a href="/superadmin/penjualan/deletetransaksi/{{$item->id}}"
+                                        onclick="return confirm('Yakin ingin di hapus');"
+                                        class="btn btn-xs  btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>TOTAL</td>
+                            <td>{{number_format($data->detail->sum('total'))}}</td>
                         </tr>
                     </table>
                   

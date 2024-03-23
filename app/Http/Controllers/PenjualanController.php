@@ -6,6 +6,7 @@ use App\Models\JenisLayanan;
 use App\Models\Karyawan;
 use App\Models\MerkOli;
 use App\Models\Penjualan;
+use App\Models\PenjualanDetail;
 use App\Models\Sparepart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -37,9 +38,38 @@ class PenjualanController extends Controller
         $sparepart = Sparepart::get();
         return view('admin.penjualan.transaksi', compact('data', 'layanan', 'oli', 'sparepart'));
     }
-    public function transaksiStore(Request $req)
+    public function transaksiStore(Request $req, $id)
     {
-        dd($req->all());
+
+        if ($req->morp == 'jenis_layanan') {
+            $data = JenisLayanan::find($req->jenis_layanan_id);
+        }
+
+        if ($req->morp == 'merk_oli') {
+            $data = MerkOli::find($req->merk_oli_id);
+        }
+
+        if ($req->morp == 'sparepart') {
+            $data = Sparepart::find($req->sparepart_id);
+        }
+
+        $param = $req->all();
+
+        $param['penjualan_id'] = $id;
+        $param['nama'] = $data->nama;
+        $param['morp_id'] = $data->id;
+        $param['harga'] = $data->harga;
+        $param['total'] = $data->harga * $req->jumlah;
+
+        $check = PenjualanDetail::where('morp', $req->morp)->where('morp_id', $data->id)->first();
+        if ($check == null) {
+            PenjualanDetail::create($param);
+        } else {
+            $check->update($param);
+        }
+
+        Session::flash('success', 'Transaksi Berhasil Di simpan');
+        return back();
     }
     public function store(Request $req)
     {
@@ -64,5 +94,12 @@ class PenjualanController extends Controller
         $data = Penjualan::find($id)->delete();
         Session::flash('success', 'Berhasil');
         return redirect('/superadmin/penjualan');
+    }
+    public function transaksiDelete($id)
+    {
+        $data = PenjualanDetail::find($id)->delete();
+        Session::flash('success', 'Berhasil');
+        return back();
+        
     }
 }

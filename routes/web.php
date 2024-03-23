@@ -13,25 +13,26 @@ use App\Http\Controllers\DaftarController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\MerkOliController;
 use App\Http\Controllers\NasabahController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\SetoranController;
 use App\Http\Controllers\DepositoController;
+use App\Http\Controllers\JenisOliController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PencairanController;
 use App\Http\Controllers\PengajuanController;
-use App\Http\Controllers\SertifikatController;
-use App\Http\Controllers\KonfigurasiController;
-use App\Http\Controllers\SerahTerimaController;
-use App\Http\Controllers\LupaPasswordController;
-use App\Http\Controllers\GantiPasswordController;
-use App\Http\Controllers\JenisLayananController;
-use App\Http\Controllers\JenisOliController;
-use App\Http\Controllers\MerkOliController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\SparepartController;
+use App\Http\Controllers\SertifikatController;
+use App\Http\Controllers\KonfigurasiController;
+use App\Http\Controllers\PerhitunganController;
+use App\Http\Controllers\SerahTerimaController;
+use App\Http\Controllers\JenisLayananController;
+use App\Http\Controllers\LupaPasswordController;
+use App\Http\Controllers\GantiPasswordController;
 
 Route::get('/', function () {
 });
@@ -103,6 +104,19 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::post('superadmin/penjualan/transaksi/{id}', [PenjualanController::class, 'transaksiStore']);
     Route::post('superadmin/penjualan/edit/{id}', [PenjualanController::class, 'update']);
     Route::get('superadmin/penjualan/delete/{id}', [PenjualanController::class, 'delete']);
+    Route::get('superadmin/penjualan/deletetransaksi/{id}', [PenjualanController::class, 'transaksiDelete']);
+
+    Route::get('superadmin/perhitungan', [PerhitunganController::class, 'index']);
+    Route::get('superadmin/perhitungan/datalatih/create', [PerhitunganController::class, 'createDataLatih']);
+    Route::get('superadmin/perhitungan/datauji/create', [PerhitunganController::class, 'createDataUji']);
+
+    Route::get('superadmin/perhitungan/datalatih/edit/{id}', [PerhitunganController::class, 'editDataLatih']);
+    Route::post('superadmin/perhitungan/datalatih/edit/{id}', [PerhitunganController::class, 'updateDataLatih']);
+    Route::get('superadmin/perhitungan/datauji/edit/{id}', [PerhitunganController::class, 'editDataUji']);
+    Route::post('superadmin/perhitungan/datauji/edit/{id}', [PerhitunganController::class, 'updateDataUji']);
+
+    Route::post('superadmin/perhitungan/datalatih/create', [PerhitunganController::class, 'storeDataLatih']);
+    Route::post('superadmin/perhitungan/datauji/create', [PerhitunganController::class, 'storeDataUji']);
 
     Route::get('superadmin/laporan', [LaporanController::class, 'index']);
     Route::post('superadmin/laporan/periode', [LaporanController::class, 'periode']);
