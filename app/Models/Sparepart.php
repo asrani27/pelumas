@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Sparepart extends Model
 {
     use HasFactory;
+    protected $table = 'sparepart';
+    protected $guarded = ['id'];
+    public $timestamps = false;
 }

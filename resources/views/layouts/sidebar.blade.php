@@ -9,16 +9,16 @@
     <li class="header">DATA MASTER</li>
     
     
-    <li class="{{ (request()->is('superadmin/user*')) ? 'active' : '' }}"><a href="/superadmin/jabatan"><i class="fa fa-arrow-right"></i> <span><i>Jabatan</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/pegawai*')) ? 'active' : '' }}"><a href="/superadmin/karyawan"><i class="fa fa-arrow-right"></i> <span><i>Karyawan</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/nasabah*')) ? 'active' : '' }}"><a href="/superadmin/jenisoli"><i class="fa fa-arrow-right"></i> <span><i>Jenis Oli</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/nasabah*')) ? 'active' : '' }}"><a href="/superadmin/merkoli"><i class="fa fa-arrow-right"></i> <span><i>Merk Oli</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/nasabah*')) ? 'active' : '' }}"><a href="/superadmin/sparepart"><i class="fa fa-arrow-right"></i> <span><i>Sparepart</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/nasabah*')) ? 'active' : '' }}"><a href="/superadmin/jenislayanan"><i class="fa fa-arrow-right"></i> <span><i>Jenis Layanan</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/nasabah*')) ? 'active' : '' }}"><a href="/superadmin/pembelian"><i class="fa fa-arrow-right"></i> <span><i>Transaksi Pembelian</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/nasabah*')) ? 'active' : '' }}"><a href="/superadmin/perhitungan"><i class="fa fa-arrow-right"></i> <span><i>Perhitungan</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/nasabah*')) ? 'active' : '' }}"><a href="/superadmin/laporan"><i class="fa fa-arrow-right"></i> <span><i>Laporan</i></span></a></li>
-    <li class="{{ (request()->is('superadmin/nasabah*')) ? 'active' : '' }}"><a href="/superadmin/kwitansi"><i class="fa fa-arrow-right"></i> <span><i>Kwitansi</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/jabatan*')) ? 'active' : '' }}"><a href="/superadmin/jabatan"><i class="fa fa-arrow-right"></i> <span><i>Jabatan</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/karyawan*')) ? 'active' : '' }}"><a href="/superadmin/karyawan"><i class="fa fa-arrow-right"></i> <span><i>Karyawan</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/jenisoli*')) ? 'active' : '' }}"><a href="/superadmin/jenisoli"><i class="fa fa-arrow-right"></i> <span><i>Jenis Oli</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/merkoli*')) ? 'active' : '' }}"><a href="/superadmin/merkoli"><i class="fa fa-arrow-right"></i> <span><i>Merk Oli</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/sparepart*')) ? 'active' : '' }}"><a href="/superadmin/sparepart"><i class="fa fa-arrow-right"></i> <span><i>Sparepart</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/jenislayanan*')) ? 'active' : '' }}"><a href="/superadmin/jenislayanan"><i class="fa fa-arrow-right"></i> <span><i>Jenis Layanan</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/pembelian*')) ? 'active' : '' }}"><a href="/superadmin/pembelian"><i class="fa fa-arrow-right"></i> <span><i>Transaksi Pembelian</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/perhitungan*')) ? 'active' : '' }}"><a href="/superadmin/perhitungan"><i class="fa fa-arrow-right"></i> <span><i>Perhitungan</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/laporan*')) ? 'active' : '' }}"><a href="/superadmin/laporan"><i class="fa fa-arrow-right"></i> <span><i>Laporan</i></span></a></li>
+    <li class="{{ (request()->is('superadmin/kwitansi*')) ? 'active' : '' }}"><a href="/superadmin/kwitansi"><i class="fa fa-arrow-right"></i> <span><i>Kwitansi</i></span></a></li>
     <li class="header">SETTING</li>
     <li class="{{ (request()->is('superadmin/gp*')) ? 'active' : '' }}"><a href="/superadmin/gp"><i class="fa fa-key"></i> <span><i>Ganti Pass</i></span></a></li>
     <li><a href="/logout"><i class="fa fa-sign-out"></i> <span><i>Logout</i></span></a></li>

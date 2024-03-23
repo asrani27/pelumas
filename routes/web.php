@@ -11,11 +11,13 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DaftarController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\NasabahController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\SetoranController;
 use App\Http\Controllers\DepositoController;
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PencairanController;
@@ -25,6 +27,9 @@ use App\Http\Controllers\KonfigurasiController;
 use App\Http\Controllers\SerahTerimaController;
 use App\Http\Controllers\LupaPasswordController;
 use App\Http\Controllers\GantiPasswordController;
+use App\Http\Controllers\JenisOliController;
+use App\Http\Controllers\MerkOliController;
+use App\Http\Controllers\SparepartController;
 
 Route::get('/', function () {
 });
@@ -32,11 +37,9 @@ Route::get('/', function () {
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 
-
 Route::get('lupa-password', [LupaPasswordController::class, 'index']);
 Route::get('/reload-captcha', [LoginController::class, 'reloadCaptcha']);
 Route::get('/logout', [LogoutController::class, 'logout']);
-
 
 Route::get('/', [LoginController::class, 'index']);
 Route::get('fitur', [FrontController::class, 'fitur']);
@@ -47,49 +50,41 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('superadmin', [HomeController::class, 'superadmin']);
     Route::get('superadmin/gp', [GantiPasswordController::class, 'index']);
     Route::post('superadmin/gp', [GantiPasswordController::class, 'update']);
-    Route::post('superadmin/sk/updatelurah', [HomeController::class, 'updatelurah']);
 
-    Route::get('superadmin/user', [UserController::class, 'index']);
-    Route::get('superadmin/user/create', [UserController::class, 'create']);
-    Route::post('superadmin/user/create', [UserController::class, 'store']);
-    Route::get('superadmin/user/edit/{id}', [UserController::class, 'edit']);
-    Route::post('superadmin/user/edit/{id}', [UserController::class, 'update']);
-    Route::get('superadmin/user/delete/{id}', [UserController::class, 'delete']);
+    Route::get('superadmin/jabatan', [JabatanController::class, 'index']);
+    Route::get('superadmin/jabatan/create', [JabatanController::class, 'create']);
+    Route::post('superadmin/jabatan/create', [JabatanController::class, 'store']);
+    Route::get('superadmin/jabatan/edit/{id}', [JabatanController::class, 'edit']);
+    Route::post('superadmin/jabatan/edit/{id}', [JabatanController::class, 'update']);
+    Route::get('superadmin/jabatan/delete/{id}', [JabatanController::class, 'delete']);
 
-    Route::get('superadmin/user', [UserController::class, 'index']);
-    Route::get('superadmin/user/create', [UserController::class, 'create']);
-    Route::post('superadmin/user/create', [UserController::class, 'store']);
-    Route::get('superadmin/user/edit/{id}', [UserController::class, 'edit']);
-    Route::post('superadmin/user/edit/{id}', [UserController::class, 'update']);
-    Route::get('superadmin/user/delete/{id}', [UserController::class, 'delete']);
+    Route::get('superadmin/karyawan', [KaryawanController::class, 'index']);
+    Route::get('superadmin/karyawan/create', [KaryawanController::class, 'create']);
+    Route::post('superadmin/karyawan/create', [KaryawanController::class, 'store']);
+    Route::get('superadmin/karyawan/edit/{id}', [KaryawanController::class, 'edit']);
+    Route::post('superadmin/karyawan/edit/{id}', [KaryawanController::class, 'update']);
+    Route::get('superadmin/karyawan/delete/{id}', [KaryawanController::class, 'delete']);
 
-    Route::get('superadmin/pegawai', [PegawaiController::class, 'index']);
-    Route::get('superadmin/pegawai/create', [PegawaiController::class, 'create']);
-    Route::post('superadmin/pegawai/create', [PegawaiController::class, 'store']);
-    Route::get('superadmin/pegawai/edit/{id}', [PegawaiController::class, 'edit']);
-    Route::post('superadmin/pegawai/edit/{id}', [PegawaiController::class, 'update']);
-    Route::get('superadmin/pegawai/delete/{id}', [PegawaiController::class, 'delete']);
+    Route::get('superadmin/jenisoli', [JenisOliController::class, 'index']);
+    Route::get('superadmin/jenisoli/create', [JenisOliController::class, 'create']);
+    Route::post('superadmin/jenisoli/create', [JenisOliController::class, 'store']);
+    Route::get('superadmin/jenisoli/edit/{id}', [JenisOliController::class, 'edit']);
+    Route::post('superadmin/jenisoli/edit/{id}', [JenisOliController::class, 'update']);
+    Route::get('superadmin/jenisoli/delete/{id}', [JenisOliController::class, 'delete']);
 
-    Route::get('superadmin/nasabah', [NasabahController::class, 'index']);
-    Route::get('superadmin/nasabah/create', [NasabahController::class, 'create']);
-    Route::post('superadmin/nasabah/create', [NasabahController::class, 'store']);
-    Route::get('superadmin/nasabah/edit/{id}', [NasabahController::class, 'edit']);
-    Route::post('superadmin/nasabah/edit/{id}', [NasabahController::class, 'update']);
-    Route::get('superadmin/nasabah/delete/{id}', [NasabahController::class, 'delete']);
+    Route::get('superadmin/merkoli', [MerkOliController::class, 'index']);
+    Route::get('superadmin/merkoli/create', [MerkOliController::class, 'create']);
+    Route::post('superadmin/merkoli/create', [MerkOliController::class, 'store']);
+    Route::get('superadmin/merkoli/edit/{id}', [MerkOliController::class, 'edit']);
+    Route::post('superadmin/merkoli/edit/{id}', [MerkOliController::class, 'update']);
+    Route::get('superadmin/merkoli/delete/{id}', [MerkOliController::class, 'delete']);
 
-    Route::get('superadmin/deposito', [DepositoController::class, 'index']);
-    Route::get('superadmin/deposito/create', [DepositoController::class, 'create']);
-    Route::post('superadmin/deposito/create', [DepositoController::class, 'store']);
-    Route::get('superadmin/deposito/edit/{id}', [DepositoController::class, 'edit']);
-    Route::post('superadmin/deposito/edit/{id}', [DepositoController::class, 'update']);
-    Route::get('superadmin/deposito/delete/{id}', [DepositoController::class, 'delete']);
-
-    Route::get('superadmin/setoran', [SetoranController::class, 'index']);
-    Route::get('superadmin/setoran/create', [SetoranController::class, 'create']);
-    Route::post('superadmin/setoran/create', [SetoranController::class, 'store']);
-    Route::get('superadmin/setoran/edit/{id}', [SetoranController::class, 'edit']);
-    Route::post('superadmin/setoran/edit/{id}', [SetoranController::class, 'update']);
-    Route::get('superadmin/setoran/delete/{id}', [SetoranController::class, 'delete']);
+    Route::get('superadmin/sparepart', [SparepartController::class, 'index']);
+    Route::get('superadmin/sparepart/create', [SparepartController::class, 'create']);
+    Route::post('superadmin/sparepart/create', [SparepartController::class, 'store']);
+    Route::get('superadmin/sparepart/edit/{id}', [SparepartController::class, 'edit']);
+    Route::post('superadmin/sparepart/edit/{id}', [SparepartController::class, 'update']);
+    Route::get('superadmin/sparepart/delete/{id}', [SparepartController::class, 'delete']);
 
     Route::get('superadmin/sertifikat', [SertifikatController::class, 'index']);
     Route::get('superadmin/sertifikat/create', [SertifikatController::class, 'create']);
