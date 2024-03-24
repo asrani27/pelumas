@@ -19,7 +19,7 @@
                   <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">NIK Karyawan</label>
                     <div class="col-sm-10">
-                      <input type="text" name="nik" class="form-control" value="{{$data->nik}}" readonly>
+                      <input type="text" name="nik" class="form-control" value="{{$data->nik}}">
                     </div>
                   </div>
                   <div class="form-group">
