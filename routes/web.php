@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BibitController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\LoginController;
@@ -60,6 +61,13 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::get('superadmin/jabatan/edit/{id}', [JabatanController::class, 'edit']);
     Route::post('superadmin/jabatan/edit/{id}', [JabatanController::class, 'update']);
     Route::get('superadmin/jabatan/delete/{id}', [JabatanController::class, 'delete']);
+
+    Route::get('superadmin/booking', [BookingController::class, 'index']);
+    Route::get('superadmin/booking/create', [BookingController::class, 'create']);
+    Route::post('superadmin/booking/create', [BookingController::class, 'store']);
+    Route::get('superadmin/booking/edit/{id}', [BookingController::class, 'edit']);
+    Route::post('superadmin/booking/edit/{id}', [BookingController::class, 'update']);
+    Route::get('superadmin/booking/delete/{id}', [BookingController::class, 'delete']);
 
     Route::get('superadmin/karyawan', [KaryawanController::class, 'index']);
     Route::get('superadmin/karyawan/create', [KaryawanController::class, 'create']);

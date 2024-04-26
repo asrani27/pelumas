@@ -9,6 +9,7 @@
     <li class="header">DATA MASTER</li>
     
     
+    <li class="{{ (request()->is('superadmin/jabatan*')) ? 'active' : '' }}"><a href="/superadmin/booking"><i class="fa fa-arrow-right"></i> <span><i>Booking</i></span></a></li>
     <li class="{{ (request()->is('superadmin/jabatan*')) ? 'active' : '' }}"><a href="/superadmin/jabatan"><i class="fa fa-arrow-right"></i> <span><i>Jabatan</i></span></a></li>
     <li class="{{ (request()->is('superadmin/karyawan*')) ? 'active' : '' }}"><a href="/superadmin/karyawan"><i class="fa fa-arrow-right"></i> <span><i>Karyawan</i></span></a></li>
     <li class="{{ (request()->is('superadmin/jenisoli*')) ? 'active' : '' }}"><a href="/superadmin/jenisoli"><i class="fa fa-arrow-right"></i> <span><i>Jenis Oli</i></span></a></li>

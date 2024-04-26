@@ -9,31 +9,50 @@
 
 </div>
 
-{{-- <div class="row">
-    <div class="col-md-12">
-         <!-- BAR CHART -->
-         <div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Grafik Pembuatan Surat Kematian</h3>
 
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="barChart" style="height:230px"></canvas>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box box-warning">
+      <div class="box-header">
+        <h3 class="box-title"><i class="fa fa-clipboard"></i> Hasil Perhitungan</h3>
+
+        <div class="box-tools">
+          
+        </div>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tbody>
+          <tr>
+            <th class="text-center">No</th>
+            <th>Nama</th>
+            <th>Jan</th>
+            <th>Feb</th>
+            <th>Maret</th>
+            <th>Class</th>
+            <th> Euclidean Distance</th>
+            <th> Ranking</th>
+          </tr>
+          @foreach ($data as $key => $item)
+          <tr>
+              <td class="text-center">{{1 + $key}}</td>
+              <td>{{$item->nama}}</td>
+              <td>{{$item->januari}}</td>
+              <td>{{$item->februari}}</td>
+              <td>{{$item->maret}}</td>
+              <td>{{$item->class}}</td>
+              <td>{{$item->ed}}</td>
+              <td>{{$item->rank}}</td>
+          </tr>
+          @endforeach
+          
+        </tbody></table>
+      </div>
+      <!-- /.box-body -->
     </div>
-    
-</div> --}}
-
+  </div>
+</div>
 
 @endsection
 @push('js')
