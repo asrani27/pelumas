@@ -128,6 +128,8 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
     Route::post('superadmin/perhitungan/datauji/create', [PerhitunganController::class, 'storeDataUji']);
 
     Route::get('superadmin/laporan', [LaporanController::class, 'index']);
+    Route::get('superadmin/laporan/sparepart', [LaporanController::class, 'sparepart']);
+    Route::get('superadmin/laporan/hasil', [LaporanController::class, 'hasil']);
     Route::get('superadmin/laporan/karyawan', [LaporanController::class, 'karyawan']);
     Route::get('superadmin/laporan/jenisoli', [LaporanController::class, 'jenisoli']);
     Route::get('superadmin/laporan/merkoli', [LaporanController::class, 'merkoli']);

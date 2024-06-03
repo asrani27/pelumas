@@ -21,6 +21,8 @@
             <a href="/superadmin/laporan/merkoli" target="_blank" class="btn btn-sm btn-warning">LAP. MERK OLI</a>
             <a href="/superadmin/laporan/jenislayanan" target="_blank" class="btn btn-sm btn-warning">LAP. JENIS LAYANAN</a>
             <a href="/superadmin/laporan/jabatan" target="_blank" class="btn btn-sm btn-warning">LAP. JABATAN</a>
+            <a href="/superadmin/laporan/sparepart" target="_blank" class="btn btn-sm btn-warning">LAP. SPAREPART</a>
+            <a href="/superadmin/laporan/hasil" target="_blank" class="btn btn-sm btn-warning">LAP. HASIL PERHITUNGAN</a>
           </div>
           <!-- /.box-body -->
         </div>
