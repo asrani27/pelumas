@@ -46,6 +46,7 @@
                   <th> Euclidean Distance</th>
                   <th> Ranking</th>
                 </tr>
+                
                 @foreach ($data as $key => $item)
                 <tr>
                     <td class="text-center">{{1 + $key}}</td>

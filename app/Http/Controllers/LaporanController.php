@@ -72,7 +72,7 @@ class LaporanController extends Controller
         //perhitungan
 
         $perhitungan = DataLatih::get();
-        $data = $perhitungan->map(function ($item, $value) use ($datauji) {
+        $datar = $perhitungan->map(function ($item, $value) use ($datauji) {
             if ($datauji->first() == null) {
                 $jan = 0;
                 $feb = 0;
@@ -96,16 +96,18 @@ class LaporanController extends Controller
         });
 
 
-        $sorted = $data->sortBy('ed')->values()->map(function ($item, $key) {
+        $sorted = $datar->sortBy('ed')->values()->map(function ($item, $key) {
             $item->values = $key;
             return $item;
         });
 
-        $data->map(function ($item)  use ($sorted) {
+        $datar->map(function ($item)  use ($sorted) {
 
             $item->rank = $sorted->where('ed', $item->ed)->first()->values + 1;
             return $item;
         });
+        $data = $datar->sortBy('rank')->values();
+
 
         return view('admin.laporan.hasil', compact('datalatih', 'datauji', 'data'));
     }
